@@ -5,10 +5,10 @@ import java.util.Objects;
 public class Client {
     private String name;
     private String email;
-    private int contact;
+    private String contact;
     private int id;
 
-    public Client(String name, String email, int contact) {
+    public Client(String name, String email, String contact) {
         this.name = name;
         this.email = email;
         this.contact = contact;
@@ -30,11 +30,11 @@ public class Client {
         this.email = email;
     }
 
-    public int getContact() {
+    public String getContact() {
         return contact;
     }
 
-    public void setContact(int contact) {
+    public void setContact(String contact) {
         this.contact = contact;
     }
 
@@ -53,17 +53,17 @@ public class Client {
 
         Client client = (Client) o;
 
-        if (contact != client.contact) return false;
         if (id != client.id) return false;
         if (!Objects.equals(name, client.name)) return false;
-        return Objects.equals(email, client.email);
+        if (!Objects.equals(email, client.email)) return false;
+        return Objects.equals(contact, client.contact);
     }
 
     @Override
     public int hashCode() {
         int result = name != null ? name.hashCode() : 0;
         result = 31 * result + (email != null ? email.hashCode() : 0);
-        result = 31 * result + contact;
+        result = 31 * result + (contact != null ? contact.hashCode() : 0);
         result = 31 * result + id;
         return result;
     }
