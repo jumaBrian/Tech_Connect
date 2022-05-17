@@ -16,7 +16,6 @@ public class Sql2oServiceDao implements ServiceDao {
         this.sql2o = sql2o;
     }
 
-
     @Override
     public void add(Service service) {
         String sql = "INSERT INTO services (service, hourly_price ,hours, user_id) VALUES (:service,:hourly_price, :hours, :user_id)";
@@ -40,8 +39,29 @@ public class Sql2oServiceDao implements ServiceDao {
     }
 
     @Override
-    public void update(Service service) {
+    public Service findById(int id) {
+        try (Connection con = sql2o.open()) {
+            return con.createQuery("SELECT * FROM services WHERE id = :id")
+                    .addParameter("id", id)
+                    .executeAndFetchFirst(Service.class);
+        }
 
+    }
+
+    @Override
+    public void update(int id, String service, int hourly_price, int hours, int user_id) {
+        String sql = "UPDATE services SET (service, hourly_price, hours, user_id) = (:service,:hourly_price, :hours, :user_id) WHERE id = :id";
+
+        try(Connection con = sql2o.open()) {
+            con.createQuery(sql)
+                    .addParameter("service", service)
+                    .addParameter("hourly_price", hourly_price)
+                    .addParameter("hours", hours)
+                    .addParameter("user_id", user_id)
+                    .addParameter("id", id)
+                    .throwOnMappingFailure(false)
+                    .executeUpdate();
+        }
     }
 
     @Override

@@ -12,8 +12,10 @@ public interface ServiceDao {
     //read
     List<Service> getAll();
 
-    //update
-    void update(Service service);
+    Service findById(int id);
+
+    void update(int id, String service, int hourly_price, int hours, int user_id);
+
     //delete
     void delete(int id);
 }
