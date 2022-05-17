@@ -6,7 +6,6 @@ id SERIAL PRIMARY KEY,
  hours VARCHAR,
  hourly_price VARCHAR,
  user_id INTEGER
-
 );
 CREATE TABLE IF NOT EXISTS clients(
 id int PRIMARY KEY auto_increment,
