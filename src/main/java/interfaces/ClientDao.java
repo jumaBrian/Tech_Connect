@@ -16,7 +16,7 @@ public interface ClientDao {
     Client findById(int id);
 
     //Update
-    void update(int id, String name, String email, int contact);
+    void update(int id, String name, String email, String contact);
 
     //Destroy
     void deleteById(int id);

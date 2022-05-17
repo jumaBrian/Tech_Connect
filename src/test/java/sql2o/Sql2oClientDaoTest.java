@@ -33,16 +33,16 @@ class Sql2oClientDaoTest {
 
     @Test
     void add_correctlySetsId() {
-        Client client= new Client("John Doe","johndoe@gmail.com",071234567);
+        Client client= new Client("John Doe","johndoe@gmail.com","0712345679");
         clientDao.add(client);
         assertEquals(1,client.getId());
     }
 
     @Test
     void getAll_returnsAllClients() {
-        Client client= new Client("John Doe","johndoe@gmail.com",071234567);
-        Client client2= new Client("John Doe","johndoe@gmail.com",071234567);
-        Client client3= new Client("John Doe","johndoe@gmail.com",071234567);
+        Client client= new Client("John Doe","johndoe@gmail.com","0712345679");
+        Client client2= new Client("John Doe","johndoe@gmail.com","0712345679");
+        Client client3= new Client("John Doe","johndoe@gmail.com","0712345679");
         clientDao.add(client);
         clientDao.add(client2);
         clientDao.add(client3);
@@ -51,8 +51,8 @@ class Sql2oClientDaoTest {
 
     @Test
     void findById_returnsTheCorrectInstance() {
-        Client client= new Client("John Doe","johndoe@gmail.com",071234567);
-        Client client2= new Client("Jane Doe","johndoe@gmail.com",071234567);
+        Client client= new Client("John Doe","johndoe@gmail.com","0712345679");
+        Client client2= new Client("Jane Doe","johndoe@gmail.com","0712345679");
         clientDao.add(client);
         clientDao.add(client2);
        Client foundClient = clientDao.findById(client.getId());
@@ -61,9 +61,9 @@ class Sql2oClientDaoTest {
 
         @Test
     void update_CorrectlyUpdates() {
-        Client client= new Client("John Doe","johndoe@gmail.com",071234567);
+        Client client= new Client("John Doe","johndoe@gmail.com","0712345679");
         clientDao.add(client);
-        clientDao.update(1,"Jane Doe","jane@gmail.com",074235236);
+        clientDao.update(1,"Jane Doe","jane@gmail.com","0712345679");
         Client updatedClient = clientDao.findById(client.getId());
         assertEquals("John Doe", client.getName());
         assertEquals("Jane Doe", updatedClient.getName());
@@ -71,8 +71,8 @@ class Sql2oClientDaoTest {
 
     @Test
     void deleteById_correctlyRemovesThatParticularInstance() {
-        Client client= new Client("John Doe","johndoe@gmail.com",071234567);
-        Client client2= new Client("John Doe","johndoe@gmail.com",071234567);
+        Client client= new Client("John Doe","johndoe@gmail.com","0712345679");
+        Client client2= new Client("John Doe","johndoe@gmail.com","0712345679");
         clientDao.add(client);
         clientDao.add(client2);
         clientDao.deleteById(client.getId());
