@@ -80,4 +80,15 @@ class Sql2oServiceDaoTest {
         serviceDao.delete(id2);
         assertEquals(0, serviceDao.getAll().size());
     }
+
+    @Test
+    public void  amount_totalAmountOfService_true(){
+        serviceDao.add(testService);
+        int hours = testService.getHours();
+        int hourly_price = testService.getHourly_price();
+        int total = serviceDao.totalAmount(hours,hourly_price);
+        System.out.println(total);
+        assertEquals(12000,total);
+    }
+
 }

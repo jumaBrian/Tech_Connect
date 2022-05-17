@@ -73,4 +73,11 @@ public class Sql2oServiceDao implements ServiceDao {
                         .executeUpdate();
         }
     }
+
+    public int totalAmount(int hours, int hourly_price){
+
+        int total= hourly_price * hours;
+        return total;
+
+    }
 }

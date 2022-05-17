@@ -6,4 +6,5 @@ id SERIAL PRIMARY KEY,
  hours VARCHAR,
  hourly_price VARCHAR,
  user_id INTEGER
+
 );
