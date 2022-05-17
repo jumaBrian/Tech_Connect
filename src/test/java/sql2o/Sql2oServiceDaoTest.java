@@ -1,5 +1,6 @@
 package sql2o;
 
+import models.Client;
 import models.Service;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -14,6 +15,8 @@ class Sql2oServiceDaoTest {
     private Service testService = new Service("Data Science",1500, 8, 1); //instantiate new user, next user.getId();
     private Service testService2 = new Service("Data Analysis",1000, 10, 1); //instantiate new user, next user.getId();
     private Sql2oServiceDao serviceDao;
+
+    private Sql2oClientDao clientDao;
     private Connection conn;
 
 
@@ -22,6 +25,7 @@ class Sql2oServiceDaoTest {
         String connect = "jdbc:h2:mem:testing;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
         Sql2o sql2o = new Sql2o(connect,"","");
         serviceDao = new Sql2oServiceDao(sql2o);
+        clientDao = new Sql2oClientDao(sql2o);
         conn = sql2o.open();
     }
 
@@ -89,6 +93,30 @@ class Sql2oServiceDaoTest {
         int total = serviceDao.totalAmount(hours,hourly_price);
         System.out.println(total);
         assertEquals(12000,total);
+    }
+
+    @Test
+    public void getAllServicesByClient(){
+        Client client = new Client("John","jane@gmail.com","0722252522");
+        Client otherClient = new Client("Jane","john@gmail.com","0722862522");
+        clientDao.add(client);
+        clientDao.add(otherClient);
+        Service service= setupServiceForClient(client);
+        Service service2= setupServiceForClient(client);
+        Service serviceForOtherClient= setupServiceForClient(otherClient);
+        int clientId= client.getId();
+        int client2Id= otherClient.getId();
+        System.out.println(clientId);
+        System.out.println(client2Id);
+        assertEquals(2, serviceDao.getAllServicesByClient(client.getId()).size());
+        assertEquals(1, serviceDao.getAllServicesByClient(client2Id).size());
+    }
+
+    //helper
+    public Service setupServiceForClient(Client client) {
+        Service service = new Service(500,10,client.getId());
+        serviceDao.add(service);
+        return service;
     }
 
 }

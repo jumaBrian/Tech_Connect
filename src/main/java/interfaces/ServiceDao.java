@@ -11,6 +11,7 @@ public interface ServiceDao {
 
     //read
     List<Service> getAll();
+    List<Service> getAllServicesByClient(int user_id);
 
     Service findById(int id);
 
