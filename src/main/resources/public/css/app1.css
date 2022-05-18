@@ -47,5 +47,38 @@
      inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
  }
 
+.hello{
+  margin-top:10%
+}
+.instagram{
+  height:40px;
+  color:white;
+   margin-left:-35%;
+
+
+}
+.twitter{
+  height:40px;
+  color:white;
+  margin-left:-35%;
+
+}
+.facebook{
+  height:40px;
+  color:white;
+  margin-left:-40%;
+
+}
+.fa-phone{
+  margin-left:-26%;
+}
+.call-center{
+  height:30px;
+  width:20%;
+}
+.map{
+ margin-top:5%;
+}
+
 
 
