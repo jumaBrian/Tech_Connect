@@ -1,15 +1,26 @@
+import models.Client;
+import models.Service;
+import org.sql2o.Sql2o;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
+import sql2o.Sql2oClientDao;
+import sql2o.Sql2oServiceDao;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
-import static spark.Spark.get;
-import static spark.Spark.staticFileLocation;
+import static spark.Spark.*;
 
 public class App {
     public static void main(String[] args) {
         staticFileLocation("/public");
+
+        String connectionString = "jdbc:postgresql://localhost:5432/tech_connect";
+        Sql2o sql2o = new Sql2o(connectionString, "nina", "kabila");
+
+        Sql2oClientDao clientDao = new Sql2oClientDao(sql2o);
+        Sql2oServiceDao serviceDao = new Sql2oServiceDao(sql2o);
 
         //route to take us to homepage
         get("/",(request,respond)->{
@@ -36,6 +47,45 @@ public class App {
             return new ModelAndView(model,"contacts.hbs");
         }, new HandlebarsTemplateEngine());
 
+        //Client
+        get("/clients/new", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            return new ModelAndView(model, "client-form.hbs");
+        }, new HandlebarsTemplateEngine());
 
+        //post: process a form to create a new animal
+        post("/clients/new", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            String name = req.queryParams("name");
+            String email = req.queryParams("email");
+            String contact = req.queryParams("contact");
+            Client newClient = new Client(name,email,contact);
+            clientDao.add(newClient);
+            Client client =clientDao.findById(newClient.getId());
+            model.put("clients", client);
+            return new ModelAndView(model,"success.hbs");
+        }, new HandlebarsTemplateEngine());
+        get("/clients/:id/services/new", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            return new ModelAndView(model, "billing-form.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        post("/clients/:id/services/new", (req, res) -> { //new
+            Map<String, Object> model = new HashMap<>();
+            int hours = Integer.parseInt(req.queryParams("hours"));
+            int user_id = Integer.parseInt(req.queryParams("user_id"));
+            Service newService = new Service(1000,hours,user_id);
+//          newService.setUser_id(id);
+            serviceDao.add(newService);
+            int total= serviceDao.totalAmount(1000,hours);
+            clientDao.addService(newService);
+            List<Service> list = clientDao.getAllServicesByClient(user_id);
+            Client client = clientDao.findById(user_id);
+            model.put("total", total);
+            model.put("services", list);
+            model.put("clients", client);
+            model.put("service", newService);
+            return new ModelAndView(model,"checkout.hbs");
+        }, new HandlebarsTemplateEngine());
     }
 }
