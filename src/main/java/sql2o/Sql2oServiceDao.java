@@ -37,16 +37,6 @@ public class Sql2oServiceDao implements ServiceDao {
                     .executeAndFetch(Service.class);
         }
     }
-
-    @Override
-    public List<Service> getAllServicesByClient(int user_id) {
-        try (Connection con = sql2o.open()) {
-            return con.createQuery("SELECT * FROM services WHERE user_id = :user_id")
-                    .addParameter("user_id", user_id)
-                    .executeAndFetch(Service.class);
-        }
-    }
-
     @Override
     public Service findById(int id) {
         try (Connection con = sql2o.open()) {

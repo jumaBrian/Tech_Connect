@@ -2,6 +2,7 @@ package sql2o;
 
 import interfaces.ClientDao;
 import models.Client;
+import models.Service;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 import org.sql2o.Sql2oException;
@@ -83,6 +84,26 @@ public class Sql2oClientDao implements ClientDao {
                     .executeUpdate();
         } catch (Sql2oException ex){
             System.out.println(ex);
+        }
+    }
+    @Override
+    public List<Service> getAllServicesByClient(int user_id) {
+        try (Connection con = sql2o.open()) {
+            return con.createQuery("SELECT * FROM services WHERE user_id = :user_id")
+                    .addParameter("user_id", user_id)
+                    .executeAndFetch(Service.class);
+        }
+    }
+    public void addService(Service service) {
+        String sql = "INSERT INTO services (service, hourly_price ,hours, user_id) VALUES (:service,:hourly_price, :hours, :user_id)";
+        try (Connection con = sql2o.open()) {
+            int id = (int) con.createQuery(sql, true)
+                    .bind(service)
+                    .executeUpdate()
+                    .getKey();
+            service.setId(id);
+        } catch (Sql2oException ex) {
+            System.out.println("there was a problem adding service");
         }
     }
 }

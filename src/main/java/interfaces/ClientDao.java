@@ -1,6 +1,7 @@
 package interfaces;
 
 import models.Client;
+import models.Service;
 
 import java.util.List;
 
@@ -11,6 +12,7 @@ public interface ClientDao {
 
     //Read
     List<Client> getAll();
+    List<Service> getAllServicesByClient(int user_id);
 
     //Find
     Client findById(int id);
