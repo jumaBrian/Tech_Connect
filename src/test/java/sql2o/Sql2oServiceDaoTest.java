@@ -1,5 +1,6 @@
 package sql2o;
 
+import interfaces.ServiceDao;
 import models.Client;
 import models.Service;
 import org.junit.jupiter.api.AfterEach;
@@ -22,8 +23,9 @@ class Sql2oServiceDaoTest {
 
     @BeforeEach
     public void setUp() {
-        String connect = "jdbc:h2:mem:testing;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
-        Sql2o sql2o = new Sql2o(connect,"","");
+//        String connect = "jdbc:h2:mem:testing;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
+        String connectionString = "jdbc:postgresql://localhost:5432/tech_connect_test"; // connect to postgres test database
+        Sql2o sql2o = new Sql2o(connectionString,"nina","kabila");
         serviceDao = new Sql2oServiceDao(sql2o);
         clientDao = new Sql2oClientDao(sql2o);
         conn = sql2o.open();
@@ -31,6 +33,8 @@ class Sql2oServiceDaoTest {
 
     @AfterEach
     void tearDown() {
+        clientDao.clearAll();
+        serviceDao.clearAll();
         conn.close();
     }
     @Test

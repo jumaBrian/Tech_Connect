@@ -20,6 +20,6 @@ public interface ClientDao {
 
     //Destroy
     void deleteById(int id);
-//    void clearAll();
+    void clearAll();
 
 }

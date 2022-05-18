@@ -6,11 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -20,22 +16,31 @@ class Sql2oClientDaoTest {
 
     @BeforeEach
     void setUp() {
-        String connectionString = "jdbc:h2:mem:testing;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
-        Sql2o sql2o = new Sql2o(connectionString, "", "");
+//       String connectionString = "jdbc:h2:mem:testing;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
+        String connectionString = "jdbc:postgresql://localhost:5432/tech_connect_test"; // connect to postgres test database
+        Sql2o sql2o = new Sql2o(connectionString, "nina", "kabila");
         clientDao = new Sql2oClientDao(sql2o);
         conn = sql2o.open();
     }
 
     @AfterEach
     void tearDown() {
+        clientDao.clearAll();
         conn.close();
     }
 
     @Test
     void add_correctlySetsId() {
         Client client= new Client("John Doe","johndoe@gmail.com","0712345679");
+        Client client2= new Client("Jane Doe","johndoe@gmail.com","0712345679");
+        int originalClientId = client.getId();
         clientDao.add(client);
-        assertEquals(1,client.getId());
+        clientDao.add(client2);
+        System.out.println(originalClientId);
+        System.out.println(client.getId());
+        assertNotEquals(originalClientId, client.getId());
+        assertTrue(clientDao.getAll().get(0).equals(client));
+        assertTrue(clientDao.getAll().get(1).equals(client2));
     }
 
     @Test
@@ -63,7 +68,7 @@ class Sql2oClientDaoTest {
     void update_CorrectlyUpdates() {
         Client client= new Client("John Doe","johndoe@gmail.com","0712345679");
         clientDao.add(client);
-        clientDao.update(1,"Jane Doe","jane@gmail.com","0712345679");
+        clientDao.update(client.getId(),"Jane Doe","jane@gmail.com","0712345679");
         Client updatedClient = clientDao.findById(client.getId());
         assertEquals("John Doe", client.getName());
         assertEquals("Jane Doe", updatedClient.getName());

@@ -19,4 +19,6 @@ public interface ServiceDao {
 
     //delete
     void delete(int id);
+    void clearAll();
+
 }

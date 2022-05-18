@@ -83,6 +83,17 @@ public class Sql2oServiceDao implements ServiceDao {
         }
     }
 
+    @Override
+    public void clearAll() {
+        String sql = "DELETE from services";
+        try (Connection con = sql2o.open()) {
+            con.createQuery(sql)
+                    .executeUpdate();
+        } catch (Sql2oException ex){
+            System.out.println(ex);
+        }
+    }
+
     public int totalAmount(int hours, int hourly_price){
 
         int total= hourly_price * hours;
