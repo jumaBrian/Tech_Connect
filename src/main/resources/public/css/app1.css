@@ -21,6 +21,7 @@
    color:white;
    padding-left:3% ;
 }
+
 #get-startedbutton{
     border-radius:50px;
        margin-left:5%;
@@ -36,6 +37,11 @@
 }
 
 #get-startedbutton:hover {
-  border:2px solid black;
-}
+   box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+               -4px -4px 6px 0 rgba(116, 125, 136, .5),
+     inset -4px -4px 6px 0 rgba(255,255,255,.2),
+     inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+ }
+
+
 
