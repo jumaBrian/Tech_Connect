@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Holtwood+One+SC&family=Pacifico&family=Playfair+Display&family=Quicksand:wght@300&family=Roboto:wght@100&display=swap');
+*{
+    font-family:'quicksand';
+}
+.logo{
+ height:40px ;
+ margin-left:3% ;
+}
+.logo-title{
+   color:white;
+   font-size:20px;
+   padding-top:2%;
+
+}
+#connect-title{
+   color:white;
+   display:flex;
+   font-size:70px ;
+   margin-top:100px;
+   align-items:center ;
+   padding-left:3% ;
+}
+
+#let-subtitle{
+   color:white;
+   padding-left:3% ;
+}
+
+#get-startedbutton{
+    border-radius:50px;
+       margin-left:5%;
+       width:240px;
+       height:60px;
+       background-color:transparent ;
+       color:white;
+       border:2px solid white;
+       font-size:20px;
+       margin-top:2%;
+       overflow: hidden;
+       cursor: pointer;
+}
+
+#get-startedbutton:hover {
+   box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+               -4px -4px 6px 0 rgba(116, 125, 136, .5),
+     inset -4px -4px 6px 0 rgba(255,255,255,.2),
+     inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+ }
+
+
+
