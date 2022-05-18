@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Holtwood+One+SC&family=Pacifico&family=Playfair+Display&family=Quicksand:wght@300&family=Roboto:wght@100&display=swap');
+*{
+    font-family:'quicksand';
+}
 .logo{
  height:40px ;
  margin-left:3% ;
