@@ -19,6 +19,7 @@
     <title>Tech Connect</title>
 </head>
 <body>
+
     <!-- Navigation bar to be included in all pages -->
     <div class="container">
         <nav class="navbar navbar-expand-lg bg-white">
@@ -47,12 +48,32 @@
         <p id="page-header" class="display-3 fw-bold">{{#block "title"}}Page Title{{/block}}</p>
         <p class=""><a href="/" class="homepage-route">Home Page</a>&raquo; {{#block "title"}}Page Title{{/block}}</p>
 
+
     <!-- Container for page specific content -->
     <div class="container">
         <div class="col-md-12">
             {{#block "content"}}
             {{/block}}
         </div>
+    </div>
+    <div style="background-color: #050A30;" width="100%" class="p-5 text-white d-flex justify-content-evenly" id="footer">
+        <div class = "vertical"></div>
+        <div class="d-flex flex-column">
+            <div class="text-end">
+                <a class="navbar-brand" href="#">
+                    <img class="d-inline-block align-top" width="80" height="80" src="images/logo.png" alt=" ">
+                    <span class="fw-bold display-6">Tech connect</span>
+                </a>
+            </div>
+        </div>
+        <div class="text-start">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+
     </div>
 
         <style>
@@ -65,6 +86,20 @@
             font-size: 40px;
             font-weight: 600;
             }
+            .vertical {
+            border-left: 6px solid white;
+            height: 100px;
+            position:absolute;
+            left: 50%;
+        }
+        ul{
+        list-style: none;
+        }
+        #footer{
+        bottom: 0;
+        left:0;
+        width:100%;
+        }
         </style>
 
 

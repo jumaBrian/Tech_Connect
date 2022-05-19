@@ -1,12 +1,45 @@
 {{#partial "content"}}
 
+    <!-- Navigation bar to be included in all pages -->
+    <div class="container my-3" id="nav">
+        <nav class="navbar navbar-expand-lg bg-white">
+            <div>
+                <a class="navbar-brand" href="#">
+                    <img class="d-inline-block align-top" width="30" height="30" src="images/logo.png" alt="logo">
+                    <span class="fw-bold" style="color: #000075;">Tech connect</span>
+                </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav container col-md-4">
+                    <a class="nav-item nav-link active" href="/">HOME</a>
+                    <a class="nav-item nav-link" href="/about">ABOUT</a>
+                    <a class="nav-item nav-link" href="/services">SERVICES</a>
+                    <a class="nav-item nav-link" href="/contacts">CONTACT</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <pre>
+        <br>
+    </pre>
+    <!-- This part indicates the path the user is coming from -->
+    <div style="background-color: #000075;" width="1000px" class="text-center p-5 mt-5 text-white">
+        <p id="page-header" class="display-3 fw-bold">ABOUT US</p>
+        <p class="">Home Page &raquo; About Us</p>
+    </div>
+
+    <!-- Page Specific Content -->
     <div class="container mt-5 px-5">
         <div class="d-flex justify-content-between">
             <div class="px-5">
                 <img src="images/hiring.png" alt="">
             </div>
             <div>
-                <p class="display-6 fw-bold">Right Partner for Matters Hiring</p>
+                <p class="display-6 fw-bold" style="font-weight:bold;">Right Partner for Matters Hiring</p>
                 <p>Hiring is one of the fastest paths to removing headaches off your plate.<br> Enter
                     Tech Connect, a company that focuses on sourcing and hiring out technical talent
                     for companies so that they can forcus more on the core business activities.
@@ -34,9 +67,9 @@
     </div>
 
 
-    <div class="container my-5 border p-3">
+    <div class="container my-5 border border-4 rounded py-5 px-3">
         <div class="text-center">
-            <h5 style="color:#0075;">Numbers Are Talking</h5>
+            <h5 style="color:#0075;" class="fw-bold">Numbers Are Talking</h5>
             <p class="display-6 fw-bold">Let’s Check Our Business Growth<br>
                 and Success Story</p>
             <p>For many entrepreneurs, this type of guarantee is enough to choose the startup for all their developer needs.
@@ -49,7 +82,7 @@
                         <path
                                 d="M7 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-1zM2 1a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2zm0 8a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2H2zm.854-3.646a.5.5 0 0 1-.708 0l-1-1a.5.5 0 1 1 .708-.708l.646.647 1.646-1.647a.5.5 0 1 1 .708.708l-2 2zm0 8a.5.5 0 0 1-.708 0l-1-1a.5.5 0 0 1 .708-.708l.646.647 1.646-1.647a.5.5 0 0 1 .708.708l-2 2zM7 10.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-1zm0-5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 8a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z" />
                     </svg>
-                    <h4 style="color:#0075;">600+</h4>
+                    <h4 style="color:#0075;" class="fw-bold">600+</h4>
                     <h4>Delivered Products</h4>
                 </div>
                 <div>
@@ -58,7 +91,7 @@
                         <path fill-rule="evenodd"
                               d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2Z" />
                     </svg>
-                    <h4 style="color:#0075;">245+</h4>
+                    <h4 style="color:#0075;" class="fw-bold">245+</h4>
                     <h4>It Consulting</h4>
                 </div>
                 <div>
@@ -69,7 +102,7 @@
                         <path
                                 d="M12 1a2 2 0 0 1 2 2 2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2 2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h10ZM2 12V5a2 2 0 0 1 2-2h9a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1Zm1-4v5a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V8H3Zm12-1V5a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v2h12Z" />
                     </svg>
-                    <h4 style="color:#0075;">350+</h4>
+                    <h4 style="color:#0075;" class="fw-bold">350+</h4>
                     <h4>Launched </h4>
                 </div>
                 <div>
@@ -79,7 +112,7 @@
                                 d="M0 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6zm6 3h4V5H6v4zm9-1V6a1 1 0 0 0-1-1h-3v4h3a1 1 0 0 0 1-1z" />
                     </svg>
                     <div class="ps-4">
-                        <h4 style="color:#0075;">1000+</h4>
+                        <h4 style="color:#0075;" class="fw-bold">1000+</h4>
                         <h4>Projects Completed</h4>
                     </div>
                 </div>
@@ -107,6 +140,18 @@
         #profile img {
                 width: 5vw;
                 height: 4vw;
+        }
+        .fw-bold{
+        font-family: 'Acme', sans-serif;
+        }
+        h4{
+        font-family: 'Acme', sans-serif;
+        }
+        #nav{
+        position: fixed;
+        top:0;
+        width:100%;
+        z-index: 1;
         }
     </style>
 {{/partial}}

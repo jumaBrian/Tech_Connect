@@ -1,4 +1,38 @@
 {{#partial "content"}}
+    <!-- Navigation bar to be included in all pages -->
+    <div class="container py-5" id="nav">
+        <nav class="navbar navbar-expand-lg bg-white">
+            <div>
+                <a class="navbar-brand" href="#">
+                    <img class="d-inline-block align-top" width="30" height="30" src="images/logo.png" alt="logo">
+                    <span class="fw-bold">Tech connect</span>
+                </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav container col-md-4">
+                    <a class="nav-item nav-link active" href="/">HOME</a>
+                    <a class="nav-item nav-link" href="/about">ABOUT</a>
+                    <a class="nav-item nav-link" href="/services">SERVICES</a>
+                    <a class="nav-item nav-link" href="/contacts">CONTACT</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <pre>
+        <br>
+    </pre>
+    <!-- This part indicates the path the user is coming from -->
+    <div style="background-color: #000075;" width="100%" class="text-center p-5 mt-5 text-white">
+        <p id="page-header" class="display-3 fw-bold">SERVICES</p>
+        <p class="">Home Page &raquo; Services</p>
+    </div>
+
+    <!-- Page Specific Content -->
+
     <div class="container text-center mt-5">
         <h5 style="color:#0075;">Our Services</h5>
         <p class="display-6 fw-bold">We Provide a Wide<br>
@@ -28,8 +62,7 @@
                                         d="M8 2a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 6.095 0 7.555 0 9.318 0 11.366 1.708 13 3.781 13h8.906C14.502 13 16 11.57 16 9.773c0-1.636-1.242-2.969-2.834-3.194C12.923 3.999 10.69 2 8 2zm2.354 4.854-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z" />
                             </svg>
                             <h5 class="card-title">Cloud Computing</h5>
-                            <p class="card-text">On-demand availability of computer system resources, especially data
-                                storage and computing power, without direct active management by the user</p>
+                            <p class="card-text">On-demand availability of computer system resources and computing power, without direct active management by the user</p>
                         </div>
                     </div>
                 </div>
@@ -37,15 +70,13 @@
                     <div class="card">
                         <div class="card-body text-start">
                             <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor"
-                                 class="bi bi-motherboard-fill" viewBox="0 0 20 20">
-                                <path d="M5 7h3V4H5v3Z" />
+                                 class="bi bi-file-earmark-code-fill" viewBox="0 0 20 20">
                                 <path
-                                        d="M1 2a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-2H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 9H1V8H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6H1V5H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 2H1Zm11 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7Zm2 0a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7ZM3.5 10a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1h-6Zm0 2a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1h-6ZM4 4h-.5a.5.5 0 0 0 0 1H4v1h-.5a.5.5 0 0 0 0 1H4a1 1 0 0 0 1 1v.5a.5.5 0 0 0 1 0V8h1v.5a.5.5 0 0 0 1 0V8a1 1 0 0 0 1-1h.5a.5.5 0 0 0 0-1H9V5h.5a.5.5 0 0 0 0-1H9a1 1 0 0 0-1-1v-.5a.5.5 0 0 0-1 0V3H6v-.5a.5.5 0 0 0-1 0V3a1 1 0 0 0-1 1Zm7 7.5v1a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 0-.5.5Z" />
+                                        d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM6.646 7.646a.5.5 0 1 1 .708.708L5.707 10l1.647 1.646a.5.5 0 0 1-.708.708l-2-2a.5.5 0 0 1 0-.708l2-2zm2.708 0 2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L10.293 10 8.646 8.354a.5.5 0 1 1 .708-.708z" />
                             </svg>
-                            <h5 class="card-title">Hardware Maintenance</h5>
-                            <p class="card-text">Support services provided for the optimization and/or repair of server,
-                                network and storage hardware. These services might include contract maintenance,
-                                installation, hourly technical consulting services and parts</p>
+                            <h5 class="card-title">Web Development</h5>
+                            <p class="card-text">Processes and procedures involved in writing software for web based solutions,
+                                such as enterprise backends and nice dynamic front-ends.</p>
                         </div>
                     </div>
                 </div>
@@ -59,24 +90,20 @@
                                 <path
                                         d="M4 4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4zm5 7a1 1 0 1 0-2 0 1 1 0 0 0 2 0zM1.807 4.734a.5.5 0 1 0-.884-.468A7.967 7.967 0 0 0 0 8c0 1.347.334 2.618.923 3.734a.5.5 0 1 0 .884-.468A6.967 6.967 0 0 1 1 8c0-1.18.292-2.292.807-3.266zm13.27-.468a.5.5 0 0 0-.884.468C14.708 5.708 15 6.819 15 8c0 1.18-.292 2.292-.807 3.266a.5.5 0 0 0 .884.468A7.967 7.967 0 0 0 16 8a7.967 7.967 0 0 0-.923-3.734zM3.34 6.182a.5.5 0 1 0-.93-.364A5.986 5.986 0 0 0 2 8c0 .769.145 1.505.41 2.182a.5.5 0 1 0 .93-.364A4.986 4.986 0 0 1 3 8c0-.642.12-1.255.34-1.818zm10.25-.364a.5.5 0 0 0-.93.364c.22.563.34 1.176.34 1.818 0 .642-.12 1.255-.34 1.818a.5.5 0 0 0 .93.364C13.856 9.505 14 8.769 14 8c0-.769-.145-1.505-.41-2.182z" />
                             </svg>
-                            <h5 class="card-title">Mobile Development</h5>
-                            <p class="card-text">A set of processes and procedures involved in writing software for small,
-                                wireless computing devices, such as smartphones and other hand-held devices.</p>
+                            <h5 class="card-title">Mobile App Development</h5>
+                            <p class="card-text">Processes and procedures involved in writing software for small,
+                                wireless computing devices, such as smartphones.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="card">
                         <div class="card-body text-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor"
-                                 class="bi bi-pc" viewBox="0 0 20 20 ">
-                                <path
-                                        d="M5 0a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H5Zm.5 14a.5.5 0 1 1 0 1 .5.5 0 0 1 0-1Zm2 0a.5.5 0 1 1 0 1 .5.5 0 0 1 0-1ZM5 1.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5ZM5.5 3h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1Z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-graph-up-arrow" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0Zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5Z"/>
                             </svg>
-                            <h5 class="card-title">DevOPs</h5>
-                            <p class="card-text">The combination of cultural philosophies, practices, and tools that
-                                increases an organization’s ability to deliver applications and services at high velocity:
-                                evolving and improving products at a faster pace.
+                            <h5 class="card-title">Data Analysis</h5>
+                            <p class="card-text">Inspecting, cleansing, transforming, and modelling data with the goal of discovering useful information and informing conclusions.
                             </p>
                         </div>
                     </div>
@@ -84,14 +111,11 @@
                 <div class="col-sm-4">
                     <div class="card">
                         <div class="card-body text-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor"
-                                 class="bi bi-file-earmark-code-fill" viewBox="0 0 20 20">
-                                <path
-                                        d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM6.646 7.646a.5.5 0 1 1 .708.708L5.707 10l1.647 1.646a.5.5 0 0 1-.708.708l-2-2a.5.5 0 0 1 0-.708l2-2zm2.708 0 2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L10.293 10 8.646 8.354a.5.5 0 1 1 .708-.708z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-bookshelf" viewBox="0 0 20 20">
+                                <path d="M2.5 0a.5.5 0 0 1 .5.5V2h10V.5a.5.5 0 0 1 1 0v15a.5.5 0 0 1-1 0V15H3v.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5zM3 14h10v-3H3v3zm0-4h10V7H3v3zm0-4h10V3H3v3z"/>
                             </svg>
-                            <h5 class="card-title">QA & Testing</h5>
-                            <p class="card-text">To identify bugs or errors during the software development process.
-                                Specific test cases are checked on the program to see if it performs the functions required
+                            <h5 class="card-title">Business Reform</h5>
+                            <p class="card-text">Reduce the costs and risks of business activity by improving poor government policies, laws and regulations.
                             </p>
                         </div>
                     </div>
@@ -102,12 +126,33 @@
 
     <div class="container my-3 p-5">
         <div class="d-grid gap-2 col-6 mx-auto">
-            <button class="btn text-white fw-bold display-5" type="button" style="background-color: #000075;">
+            <button class="btn text-white fw-bold" type="button" style="background-color: #000075;">
                 <a href="/clients/new">BOOK NOW</a>
             </button>
         </div>
 
     </div>
+
+    <style>
+        button a{
+        text-decoration: none;
+        font-family: 'Acme', sans-serif;
+        color: white;
+        font-size: 30px;
+        }
+        .fw-bold{
+        font-family: 'Acme', sans-serif;
+        }
+        h5{
+        font-family: 'Acme', sans-serif;
+        }
+        #nav{
+        position: fixed;
+        top:0;
+        width:100%;
+        z-index: 1;
+        }
+    </style>
 
 
 {{/partial}}
