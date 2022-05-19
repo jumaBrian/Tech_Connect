@@ -27,11 +27,11 @@
 
         <div class="mb-3 mt-3">
             <label for="hours">Hours:</label>
-            <input type="number" class="form-control" id="hours" placeholder="Enter hours" name="hours">
+            <input type="number" class="form-control" id="hours" placeholder="Enter hours" name="hours"required>
         </div>
         <div class="mb-3 mt-3">
             <label for="user_id">User ID:</label>
-            <input type="number" class="form-control" id="user_id" value="{{clients.id}}" name="user_id">
+            <input type="number" class="form-control" id="user_id" value="{{clients.id}}" name="user_id" required>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

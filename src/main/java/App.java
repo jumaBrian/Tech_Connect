@@ -13,7 +13,17 @@ import java.util.Map;
 import static spark.Spark.*;
 
 public class App {
+    //Assign heroku port
+    static int getHerokuAssignedPort() {
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        if (processBuilder.environment().get("PORT") != null) {
+            return Integer.parseInt(processBuilder.environment().get("PORT"));
+        }
+        return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
+    }
+
     public static void main(String[] args) {
+        port(getHerokuAssignedPort());
         staticFileLocation("/public");
 
         String connectionString = "jdbc:postgresql://localhost:5432/tech_connect";
@@ -53,7 +63,7 @@ public class App {
             return new ModelAndView(model, "client-form.hbs");
         }, new HandlebarsTemplateEngine());
 
-        //post: process a form to create a new animal
+        //post: process a form to create a new client
         post("/clients/new", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             String name = req.queryParams("name");
@@ -75,7 +85,6 @@ public class App {
             int hours = Integer.parseInt(req.queryParams("hours"));
             int user_id = Integer.parseInt(req.queryParams("user_id"));
             Service newService = new Service(1000,hours,user_id);
-//          newService.setUser_id(id);
             serviceDao.add(newService);
             int total= serviceDao.totalAmount(1000,hours);
             clientDao.addService(newService);
