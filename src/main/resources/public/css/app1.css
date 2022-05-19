@@ -72,13 +72,20 @@
 .fa-phone{
   margin-left:-26%;
 }
-.call-center{
-  height:30px;
-  width:20%;
-}
 .map{
  margin-top:5%;
 }
+
+.homepage-route{
+ text-decoration:none;
+ color:white;
+
+}
+.homepage-route:hover{
+ text-decoration:underline;
+ color:white;
+}
+
 
 
 
