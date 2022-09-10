@@ -83,10 +83,3 @@ If you'd like to request a new function, feel free to do so by opening an issue 
 
 ### License
 Copyright (c) 2022 [click to view License](LICENSE)
-
-### Authors Info
-Linked In-[Wendy Nina]
-(https://www.linkedin.com/in/wendy-nina-616559196/)
-
-CodeWars-(https://www.codewars.com/users/the@rt_Coder)
-[Go Back to the top](#Heroes_Squad)
